@@ -18,35 +18,38 @@ export default function ForgotPassword(props) {
     };
     return (
         <Guest title="Forgot Password">
-            <div class="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email
-                address and we will email you a password reset link that will
-                allow you to choose a new one.
-            </div>
-            {status && (
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {status}
+            {props.status ? (
+                <div className="font-medium text-sm py-2 text-center text-green-600">
+                    {props.status}
                 </div>
-            )}
-            <ValidationErros errors={errors} />
-            <form onSubmit={submit}>
-                <TextInput
-                    value={data.email}
-                    type="text"
-                    handleChange={onHandleChange}
-                    isFocused={true}
-                    label="Email"
-                    name="email"
-                />
-                <div className="flex items-center justify-end mt-4">
-                    <div className="ml-4">
-                        <SubmitButton
-                            processing={processing}
-                            label="Email Password Reset Link"
-                        />
+            ) : (
+                <>
+                    <div className="mb-4 text-sm text-gray-500 leading-normal">
+                        Forgot your password? No problem. Just let us know your
+                        email address and we will email you a password reset
+                        link that will allow you to choose a new one.
                     </div>
-                </div>
-            </form>
+                    <ValidationErros errors={errors} />
+                    <form onSubmit={submit}>
+                        <TextInput
+                            value={data.email}
+                            type="text"
+                            handleChange={onHandleChange}
+                            isFocused={true}
+                            label="Email"
+                            name="email"
+                        />
+                        <div className="flex items-center justify-end mt-4">
+                            <div className="ml-4">
+                                <SubmitButton
+                                    processing={processing}
+                                    label="Email Password Reset Link"
+                                />
+                            </div>
+                        </div>
+                    </form>{" "}
+                </>
+            )}
         </Guest>
     );
 }

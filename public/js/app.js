@@ -2490,6 +2490,93 @@ function Guest(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/ConfirmPassword.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Auth/ConfirmPassword.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ConfirmPassword)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Forms/SubmitButton */ "./resources/js/Components/Forms/SubmitButton.js");
+/* harmony import */ var _Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Forms/TextInput */ "./resources/js/Components/Forms/TextInput.js");
+/* harmony import */ var _Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Guest */ "./resources/js/Layouts/Guest.js");
+/* harmony import */ var _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Forms/ValidationErrors */ "./resources/js/Components/Forms/ValidationErrors.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+function ConfirmPassword(props) {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    password: ""
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      processing = _useForm.processing,
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset("password");
+    };
+  }, []);
+
+  var onHandleChange = function onHandleChange(event) {
+    setData(event.target.name, event.target.value);
+  };
+
+  var submit = function submit(e) {
+    e.preventDefault();
+    post(route("password.confirm"));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__.default, {
+    title: "Confirm Password",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "mb-4 text-sm text-gray-600",
+      children: "This is a secure area of the application. Please confirm your password before continuing."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__.default, {
+      errors: errors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+      onSubmit: submit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_3__.default, {
+          isFocused: true,
+          value: data.password,
+          type: "password",
+          handleChange: onHandleChange,
+          label: "Password",
+          name: "password"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "flex items-center justify-end mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "ml-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__.default, {
+            processing: processing,
+            label: "Confirm"
+          })
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/ForgotPassword.js":
 /*!***************************************************!*\
   !*** ./resources/js/Pages/Auth/ForgotPassword.js ***!
@@ -2508,6 +2595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Guest */ "./resources/js/Layouts/Guest.js");
 /* harmony import */ var _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Forms/ValidationErrors */ "./resources/js/Components/Forms/ValidationErrors.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2535,36 +2623,38 @@ function ForgotPassword(props) {
     post(route("password.email"));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__.default, {
     title: "Forgot Password",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      "class": "mb-4 text-sm text-gray-500 leading-normal",
-      children: "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."
-    }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      "class": "mb-4 font-medium text-sm text-green-600",
-      children: status
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__.default, {
-      errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-      onSubmit: submit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_3__.default, {
-        value: data.email,
-        type: "text",
-        handleChange: onHandleChange,
-        isFocused: true,
-        label: "Email",
-        name: "email"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "ml-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__.default, {
-            processing: processing,
-            label: "Email Password Reset Link"
+    children: props.status ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "font-medium text-sm py-2 text-center text-green-600",
+      children: props.status
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "mb-4 text-sm text-gray-500 leading-normal",
+        children: "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__.default, {
+        errors: errors
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+        onSubmit: submit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_3__.default, {
+          value: data.email,
+          type: "text",
+          handleChange: onHandleChange,
+          isFocused: true,
+          label: "Email",
+          name: "email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "flex items-center justify-end mt-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "ml-4",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__.default, {
+              processing: processing,
+              label: "Email Password Reset Link"
+            })
           })
-        })
-      })]
-    })]
+        })]
+      }), " "]
+    })
   });
 }
 
@@ -2628,16 +2718,15 @@ function Login(props) {
 
   var submit = function submit(e) {
     e.preventDefault();
-    post(route("login"), {
-      onFinish: function onFinish() {
-        return reset("password");
-      }
-    });
+    post(route("login"));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_5__.default, {
     title: "Log in",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_6__.default, {
+    children: [props.status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "font-medium text-sm py-2 text-center text-green-600",
+      children: props.status
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_6__.default, {
       errors: errors
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       onSubmit: submit,
@@ -2724,7 +2813,14 @@ function Register(props) {
       setData = _useForm.setData,
       post = _useForm.post,
       processing = _useForm.processing,
-      errors = _useForm.errors;
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset("password", "password_confirmation");
+    };
+  }, []);
 
   var onHandleChange = function onHandleChange(event) {
     if (event.target.type === "checkbox") {
@@ -2736,11 +2832,7 @@ function Register(props) {
 
   var submit = function submit(e) {
     e.preventDefault();
-    post(route("register"), {
-      onFinish: function onFinish() {
-        return reset("password", "password_confirmation");
-      }
-    });
+    post(route("register"));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_4__.default, {
@@ -2801,6 +2893,176 @@ function Register(props) {
           })
         })]
       })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/ResetPassword.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/Auth/ResetPassword.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ResetPassword)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Forms/ValidationErrors */ "./resources/js/Components/Forms/ValidationErrors.js");
+/* harmony import */ var _Layouts_Guest__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Layouts/Guest */ "./resources/js/Layouts/Guest.js");
+/* harmony import */ var _Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Forms/TextInput */ "./resources/js/Components/Forms/TextInput.js");
+/* harmony import */ var _Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Forms/SubmitButton */ "./resources/js/Components/Forms/SubmitButton.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+function ResetPassword(props) {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    token: props.token,
+    email: props.email,
+    password: "",
+    password_confirmation: ""
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      processing = _useForm.processing,
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset("password", "password_confirmation");
+    };
+  }, []);
+
+  var onHandleChange = function onHandleChange(event) {
+    setData(event.target.name, event.target.value);
+  };
+
+  var submit = function submit(e) {
+    e.preventDefault();
+    post(route("password.update"));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_3__.default, {
+    title: "Reset Password",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_2__.default, {
+      errors: errors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+      onSubmit: submit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_4__.default, {
+          value: data.email,
+          type: "text",
+          handleChange: onHandleChange,
+          label: "Email",
+          name: "email",
+          autoComplete: "username"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_4__.default, {
+          isFocused: true,
+          value: data.password,
+          type: "password",
+          handleChange: onHandleChange,
+          label: "Password",
+          name: "password",
+          autoComplete: "new-password"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_TextInput__WEBPACK_IMPORTED_MODULE_4__.default, {
+          value: data.password_confirmation,
+          type: "password",
+          handleChange: onHandleChange,
+          label: "Password",
+          name: "password_confirmation",
+          autoComplete: "new-password"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "flex items-center justify-end mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "ml-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_5__.default, {
+            processing: processing,
+            label: "Reset Password"
+          })
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/VerifyEmail.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Auth/VerifyEmail.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ VerifyEmail)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Forms/SubmitButton */ "./resources/js/Components/Forms/SubmitButton.js");
+/* harmony import */ var _Layouts_Guest__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Layouts/Guest */ "./resources/js/Layouts/Guest.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+function VerifyEmail(props) {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  var submit = function submit(e) {
+    e.preventDefault();
+    post(route("verification.send"));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_3__.default, {
+    title: "Email Verifictation",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "mb-4 text-sm text-gray-600",
+      children: "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another."
+    }), props.status === "verification-link-sent" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "mb-4 font-medium text-sm text-green-600",
+      children: "A new verification link has been sent to the email address you provided during registration."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+      onSubmit: submit,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "mt-4 flex items-center justify-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Forms_SubmitButton__WEBPACK_IMPORTED_MODULE_2__.default, {
+          processing: processing,
+          label: "Resend Verification Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+          href: route("logout"),
+          as: "button",
+          method: "post",
+          className: "underline text-sm text-gray-600 hover:text-gray-900",
+          children: "Log Out"
+        })]
+      })
     })]
   });
 }
@@ -3148,7 +3410,7 @@ var el = document.getElementById("app");
   }
 }), el);
 _inertiajs_progress__WEBPACK_IMPORTED_MODULE_1__.InertiaProgress.init({
-  color: "#4B5563"
+  color: "#3b82f6"
 });
 
 /***/ }),
@@ -54342,12 +54604,18 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/ConfirmPassword": "./resources/js/Pages/Auth/ConfirmPassword.js",
+	"./Auth/ConfirmPassword.js": "./resources/js/Pages/Auth/ConfirmPassword.js",
 	"./Auth/ForgotPassword": "./resources/js/Pages/Auth/ForgotPassword.js",
 	"./Auth/ForgotPassword.js": "./resources/js/Pages/Auth/ForgotPassword.js",
 	"./Auth/Login": "./resources/js/Pages/Auth/Login.js",
 	"./Auth/Login.js": "./resources/js/Pages/Auth/Login.js",
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.js",
 	"./Auth/Register.js": "./resources/js/Pages/Auth/Register.js",
+	"./Auth/ResetPassword": "./resources/js/Pages/Auth/ResetPassword.js",
+	"./Auth/ResetPassword.js": "./resources/js/Pages/Auth/ResetPassword.js",
+	"./Auth/VerifyEmail": "./resources/js/Pages/Auth/VerifyEmail.js",
+	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",

@@ -29,12 +29,15 @@ export default function Login(props) {
     };
     const submit = (e) => {
         e.preventDefault();
-        post(route("login"), {
-            onFinish: () => reset("password"),
-        });
+        post(route("login"));
     };
     return (
         <Guest title="Log in">
+            {props.status && (
+                <div className="font-medium text-sm py-2 text-center text-green-600">
+                    {props.status}
+                </div>
+            )}
             <ValidationErros errors={errors} />
             <form onSubmit={submit}>
                 <TextInput

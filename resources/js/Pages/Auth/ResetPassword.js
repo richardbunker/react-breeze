@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import { useForm } from "@inertiajs/inertia-react";
-import { InertiaLink } from "@inertiajs/inertia-react";
-import SubmitButton from "../../Components/Forms/SubmitButton";
-import TextInput from "../../Components/Forms/TextInput";
-import Guest from "../../Layouts/Guest";
 import ValidationErros from "../../Components/Forms/ValidationErrors";
+import Guest from "../../Layouts/Guest";
+import TextInput from "../../Components/Forms/TextInput";
+import SubmitButton from "../../Components/Forms/SubmitButton";
 
-export default function Register(props) {
+export default function ResetPassword(props) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
+        token: props.token,
+        email: props.email,
         password: "",
         password_confirmation: "",
-        terms: false,
     });
     useEffect(() => {
         return () => {
@@ -20,30 +18,17 @@ export default function Register(props) {
         };
     }, []);
     const onHandleChange = (event) => {
-        if (event.target.type === "checkbox") {
-            setData(event.target.name, event.target.checked);
-        } else {
-            setData(event.target.name, event.target.value);
-        }
+        setData(event.target.name, event.target.value);
     };
     const submit = (e) => {
         e.preventDefault();
-        post(route("register"));
+        post(route("password.update"));
     };
     return (
-        <Guest title="Register">
+        <Guest title="Reset Password">
             <ValidationErros errors={errors} />
-            <form onSubmit={submit}>
-                <TextInput
-                    value={data.name}
-                    type="text"
-                    handleChange={onHandleChange}
-                    isFocused={true}
-                    label="Name"
-                    name="name"
-                    autoComplete="name"
-                />
 
+            <form onSubmit={submit}>
                 <div className="mt-4">
                     <TextInput
                         value={data.email}
@@ -56,6 +41,7 @@ export default function Register(props) {
                 </div>
                 <div className="mt-4">
                     <TextInput
+                        isFocused={true}
                         value={data.password}
                         type="password"
                         handleChange={onHandleChange}
@@ -77,16 +63,10 @@ export default function Register(props) {
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <InertiaLink
-                        href={route("login")}
-                        className="underline text-sm text-gray-600 hover:text-gray-900"
-                    >
-                        Already registered?
-                    </InertiaLink>
                     <div className="ml-4">
                         <SubmitButton
                             processing={processing}
-                            label="Register"
+                            label="Reset Password"
                         />
                     </div>
                 </div>
