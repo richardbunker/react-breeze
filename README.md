@@ -6,7 +6,7 @@ A Laravel Breeze & [Inertia.js](https://inertiajs.com/) implementation (with Aut
 
 #### Step 1
 
-Clone the repository
+Clone the repository.
 
 ```
 $ git clone https://github.com/richardbunker/react-breeze.git
@@ -26,7 +26,7 @@ Rename .env.example to .env. Add DB details.
 
 #### Step 4
 
-Generate an application key
+Generate an application key.
 
 ```
 $ php artisan key:generate
@@ -34,7 +34,7 @@ $ php artisan key:generate
 
 #### Step 5
 
-Install Composer dependencies
+Install Composer dependencies.
 
 ```
 $ composer install
@@ -42,7 +42,7 @@ $ composer install
 
 #### Step 6
 
-Install NPM dependencies
+Install NPM dependencies.
 
 ```
 $ npm install && npm run dev
@@ -50,7 +50,7 @@ $ npm install && npm run dev
 
 #### Step 7
 
-Migrate database
+Migrate database.
 
 ```
 $ php artisan migrate
