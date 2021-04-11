@@ -24,20 +24,21 @@ $ cd react-breeze
 
 Rename .env.example to .env. Add DB details.
 
+
 #### Step 4
-
-Generate an application key.
-
-```
-$ php artisan key:generate
-```
-
-#### Step 5
 
 Install Composer dependencies.
 
 ```
 $ composer install
+```
+
+#### Step 5
+
+Generate an application key.
+
+```
+$ php artisan key:generate
 ```
 
 #### Step 6
